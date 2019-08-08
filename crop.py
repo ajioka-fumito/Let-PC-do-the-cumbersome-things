@@ -32,10 +32,8 @@ class Crop:
         width_leaves : maximum number of sheets that be can cut horizontally
         height_leaves: maximum number of sheets that be can cut vertically
         """
-
         image = Image.open(image_path)
         name = os.path.splitext(os.path.basename(image_path))
-
         width_leaves = self.width//self.parameter["crop_size"]
         height_leaves = self.height//self.parameter["crop_size"]
 
@@ -49,15 +47,12 @@ class Crop:
                 crop = image.crop((x1,y1,x2,y2))
                 #save crop image
                 crop.save(save_dir+"/{}-{:02d}-{:02d}{}".format(name[0],height+1,width+1,name[1]))
-        
     
     def main(self):
         for i in tqdm(range(self.dataset_size)):
             self.crop(self.image_paths[i],self.parameter["image_save_dir"])
             self.crop(self.label_paths[i],self.parameter["label_save_dir"])
         
-
-
 if __name__ == "__main__":
     parameter = {"image_dir":"/home/fumito/Pictures/adachi_lab_data/DP_data/row_data/data/image",
                  "label_dir":"/home/fumito/Pictures/adachi_lab_data/DP_data/row_data/data/label",
