@@ -30,3 +30,4 @@ if __name__ == "__main__":
               "width":256,"height":256}
     md = Resize(params["before_dir"],params["after_dir"])
     md.main(params["width"],params["height"])
+    #
