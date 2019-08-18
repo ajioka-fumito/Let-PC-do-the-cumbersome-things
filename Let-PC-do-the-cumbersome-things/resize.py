@@ -25,9 +25,9 @@ class Resize:
             image.save(self.after_dir+path_name)
 
 if __name__ == "__main__":
-    params = {"before_dir":"/home/fumito/Desktop/workspace/pytorch/cnn/data/test",
-              "after_dir":"/home/fumito/Desktop/workspace/pytorch/cnn/resize_data/test/",
-              "width":256,"height":256}
+    params = {"before_dir":"/home/fumito/Pictures/adachi_lab_data/cnn_2class/original/train/inputs",
+              "after_dir":"/home/fumito/Pictures/adachi_lab_data/cnn_2class/resize/train/",
+              "width":244,"height":244}
     md = Resize(params["before_dir"],params["after_dir"])
     md.main(params["width"],params["height"])
-    #
+
